@@ -16,8 +16,11 @@ otp:
     mov     ecx, [ebp + 20]     ; length
     ;; DO NOT MODIFY
 
+    ;; initialize iterator with 0
     mov eax, 0
 
+    ;; while loop to iterate through the plaintext and xor with the
+    ;; coresponding letter in the key string then add it to the answer string
 while:
     mov bl, [esi + eax]
     xor bl, [edi + eax]
